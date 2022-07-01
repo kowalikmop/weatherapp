@@ -17,7 +17,7 @@ const screens = {
   Town: {
     screen: Town,
     navigationOptions: {
-      title: "Wybierz miasto",
+      title: "Wybierz miasto:",
     },
   },
 };
