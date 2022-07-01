@@ -11,7 +11,7 @@ const City = () => {
   return (
     <View style={styles.view}>
       <Text style={styles.text}>
-        <Ionicons name="search-sharp" style={styles.icon} size={20} /> {city},{" "}
+      <Ionicons name="locate-sharp" style={styles.icon} size={20} /> {city},{" "}
         {country}
       </Text>
     </View>

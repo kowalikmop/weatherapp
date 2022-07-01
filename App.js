@@ -1,15 +1,16 @@
+import React from "react";
+import { NavigationContainer } from "@react-navigation/native";
+
 import AppProvider from "./components/AppState";
-import Navigator from "./routes/Stack";
 
+import Tabs from "./components/Tabs";
 
-const App = () => {
+export default function App() {
   return (
     <AppProvider>
-      <Navigator>
-
-      </Navigator>
+      <NavigationContainer>
+        <Tabs />
+      </NavigationContainer>
     </AppProvider>
   );
-};
-
-export default App;
+}
