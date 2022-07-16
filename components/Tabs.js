@@ -11,6 +11,8 @@ import { AppState } from "./AppState";
 
 import City from "./City";
 import Home from "./Home";
+import Profile from "./Profile";
+import Maps from "./Maps";
 
 const Tab = createBottomTabNavigator();
 
@@ -26,7 +28,7 @@ const Tabs = () => {
     >
       <Tab.Screen
         name="Mapa"
-        component={City}
+        component={Maps}
         options={{
           //  tabBarBadge: temmpp,
           tabBarBadgeStyle: { backgroundColor: tabBarBadgeBackgroundColor },
@@ -42,6 +44,17 @@ const Tabs = () => {
           tabBarBadge: Math.floor(temp),
           tabBarIcon: ({ color, size }) => (
             <Feather name="sun" color={color} size={size} />
+          ),
+        }}
+      />
+      <Tab.Screen
+        name="Profil"
+        component={Profile}
+        options={{
+          //  tabBarBadge: temmpp,
+          tabBarBadgeStyle: { backgroundColor: tabBarBadgeBackgroundColor },
+          tabBarIcon: ({ color, size }) => (
+            <Feather name="user" color={color} size={size} />
           ),
         }}
       />
