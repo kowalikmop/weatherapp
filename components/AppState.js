@@ -6,7 +6,10 @@ export const AppState = createContext();
 const AppProvider = ({ children }) => {
   const apikey = "bfc3257422c89c6c9ce4529deabd779a";
 
-  const [coords, setCoords] = useState({});
+  const [coords, setCoords] = useState({
+    lon: 18.6464,
+    lat: 54.3521,
+  });
   const [weather, setWeather] = useState([]);
   const [temp, setTemp] = useState([]);
   const [humidity, setHumidity] = useState([]);
@@ -58,7 +61,7 @@ const AppProvider = ({ children }) => {
 
   return (
     <AppState.Provider
-      value={{ changeTown, city, country, wind, humidity, temp }}
+      value={{ changeTown, city, country, wind, humidity, temp, coords }}
     >
       {children}
     </AppState.Provider>
