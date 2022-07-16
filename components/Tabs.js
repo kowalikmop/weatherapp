@@ -15,11 +15,7 @@ import Home from "./Home";
 const Tab = createBottomTabNavigator();
 
 const Tabs = () => {
-  const { city, country, temp } = useContext(AppState);
-
-  const temmpp = String(Math.floor(temp));
-
-  console.log(typeof(temmpp));
+  const { city, temp } = useContext(AppState);
 
   return (
     <Tab.Navigator
@@ -29,10 +25,10 @@ const Tabs = () => {
       }}
     >
       <Tab.Screen
-        name="City"
+        name="Mapa"
         component={City}
         options={{
-          tabBarBadge: temmpp,
+          //  tabBarBadge: temmpp,
           tabBarBadgeStyle: { backgroundColor: tabBarBadgeBackgroundColor },
           tabBarIcon: ({ color, size }) => (
             <Ionicons name="locate-sharp" color={color} size={size} />
@@ -40,9 +36,10 @@ const Tabs = () => {
         }}
       />
       <Tab.Screen
-        name="Pogoda"
+        name={city}
         component={Home}
         options={{
+          tabBarBadge: Math.floor(temp),
           tabBarIcon: ({ color, size }) => (
             <Feather name="sun" color={color} size={size} />
           ),
