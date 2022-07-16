@@ -1,30 +1,26 @@
-import {
-  StyleSheet,
-  Text,
-  View,
-  Button,
-  Alert,
-  ScrollView,
-} from "react-native";
-import { FontAwesome } from "@expo/vector-icons";
+import * as React from "react";
+import MapView from "react-native-maps";
+import { StyleSheet, Text, View, Dimensions } from "react-native";
 
-const Profile = () => {
+const Maps = () => {
   return (
-    <View style={styles.view}>
-      <ScrollView>
-        <FontAwesome name="user-secret" size={180} color="black" />
-      </ScrollView>
+    <View style={styles.container}>
+      <MapView style={styles.map} />
     </View>
   );
 };
 
 const styles = StyleSheet.create({
-  view: {
+  container: {
     flex: 1,
-    alignSelf: "center",
-    marginTop: 120,
-    //   backgroundColor: 'blue',
+    backgroundColor: "#fff",
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  map: {
+    width: Dimensions.get("window").width,
+    height: Dimensions.get("window").height,
   },
 });
 
-export default Profile;
+export default Maps;
