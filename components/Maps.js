@@ -6,24 +6,25 @@ import { useContext } from "react";
 import { AppState } from "./AppState";
 
 const Maps = () => {
-  const { coords } = useContext(AppState);
+  const { coords, city, temp } = useContext(AppState);
+  const tempp = `Temperatura: ${Math.floor(temp.toString())} c`;
 
   return (
     <View style={styles.container}>
       <MapView
         style={styles.map}
-        initialRegion={{
-          latitude: coords.lat,
-          longitude: coords.lon,
-          //  latitudeDelta: 0.0922,
-          // longitudeDelta: 0.0421,
-        }}
+        //</View>  initialRegion={{
+        // latitude: coords.lat,
+        // longitude: coords.lon,
+        //  latitudeDelta: 0.0922,
+        // longitudeDelta: 0.0421,
+        //  }}
       >
         <Marker
           coordinate={{ latitude: coords.lat, longitude: coords.lon }}
-          pinColor="red"
-          title="HEj"
-          description="Siema"
+          pinColor="blue"
+          title={city}
+          description={tempp}
         />
       </MapView>
     </View>

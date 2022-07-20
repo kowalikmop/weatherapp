@@ -16,21 +16,15 @@ const Home = ({ navigation }) => {
   };
 
   return (
-    <>
-      <SafeAreaView style={styles.conteiner}>
-        <ImageBackground
-          source={Imagee}
-          resizeMode="cover"
-          style={styles.image}
-        >
-          <TouchableOpacity onPress={pressHandler} style={styles.citys}>
-            <City></City>
-          </TouchableOpacity>
-          <WeatherCard></WeatherCard>
-          <WeatherDetails></WeatherDetails>
-        </ImageBackground>
-      </SafeAreaView>
-    </>
+    <SafeAreaView style={styles.conteiner}>
+      <ImageBackground source={Imagee} resizeMode="cover" style={styles.image}>
+        <TouchableOpacity onPress={pressHandler} style={styles.citys}>
+          <City></City>
+        </TouchableOpacity>
+        <WeatherCard></WeatherCard>
+        <WeatherDetails></WeatherDetails>
+      </ImageBackground>
+    </SafeAreaView>
   );
 };
 

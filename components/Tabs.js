@@ -30,7 +30,6 @@ const Tabs = () => {
         name="Mapa"
         component={Maps}
         options={{
-          //  tabBarBadge: temmpp,
           tabBarBadgeStyle: { backgroundColor: tabBarBadgeBackgroundColor },
           tabBarIcon: ({ color, size }) => (
             <Ionicons name="locate-sharp" color={color} size={size} />

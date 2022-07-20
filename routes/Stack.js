@@ -11,9 +11,6 @@ const screens = {
       headerShown: false,
     },
   },
-  Tabs: {
-    screen: Tabs,
-  },
   Town: {
     screen: Town,
     navigationOptions: {
