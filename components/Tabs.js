@@ -9,8 +9,7 @@ import React, { useState, useContext } from "react";
 
 import { AppState } from "./AppState";
 
-import City from "./City";
-import Home from "./Home";
+import MyStack from "./MyStack";
 import Profile from "./Profile";
 import Maps from "./Maps";
 
@@ -38,7 +37,7 @@ const Tabs = () => {
       />
       <Tab.Screen
         name={city}
-        component={Home}
+        component={MyStack}
         options={{
           tabBarBadge: Math.floor(temp),
           tabBarIcon: ({ color, size }) => (
