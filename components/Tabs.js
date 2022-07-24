@@ -26,22 +26,22 @@ const Tabs = () => {
       }}
     >
       <Tab.Screen
-        name="Mapa"
-        component={Maps}
-        options={{
-          tabBarBadgeStyle: { backgroundColor: tabBarBadgeBackgroundColor },
-          tabBarIcon: ({ color, size }) => (
-            <Ionicons name="locate-sharp" color={color} size={size} />
-          ),
-        }}
-      />
-      <Tab.Screen
         name={city}
         component={MyStack}
         options={{
           tabBarBadge: Math.floor(temp),
           tabBarIcon: ({ color, size }) => (
             <Feather name="sun" color={color} size={size} />
+          ),
+        }}
+      />
+      <Tab.Screen
+        name="Mapa"
+        component={Maps}
+        options={{
+          tabBarBadgeStyle: { backgroundColor: tabBarBadgeBackgroundColor },
+          tabBarIcon: ({ color, size }) => (
+            <Ionicons name="locate-sharp" color={color} size={size} />
           ),
         }}
       />
