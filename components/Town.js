@@ -55,9 +55,7 @@ const styles = StyleSheet.create({
     justifyContent: "flex-start",
     //      alignItems:  "left",
     //  backgroundColor: 'red',
-  },
-  scrollview: {
-    marginTop: 30,
+    marginTop: 80,
   },
   text: {
     color: "white",
