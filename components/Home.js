@@ -3,6 +3,7 @@ import {
   StyleSheet,
   ImageBackground,
   TouchableOpacity,
+  StatusBar,
 } from "react-native";
 
 import City from "./City";
@@ -17,6 +18,7 @@ const Home = ({ navigation }) => {
 
   return (
     <SafeAreaView style={styles.conteiner}>
+      <StatusBar backgroundColor="transparent" translucent={true} />
       <ImageBackground source={Imagee} resizeMode="cover" style={styles.image}>
         <TouchableOpacity onPress={pressHandler} style={styles.citys}>
           <City></City>
