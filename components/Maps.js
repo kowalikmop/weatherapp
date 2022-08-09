@@ -2,12 +2,18 @@ import * as React from "react";
 import MapView, { Marker } from "react-native-maps";
 import { StyleSheet, Text, View, Dimensions, StatusBar } from "react-native";
 
-import { useContext } from "react";
+import { useContext, useRef } from "react";
 import { AppState } from "./AppState";
 
 const Maps = () => {
   const { coords, city, temp } = useContext(AppState);
   const tempp = `Temperatura: ${Math.floor(temp.toString())} c`;
+
+  const mapViewRef = useRef(city);
+
+  console.log(city);
+
+
 
   return (
     <View style={styles.container}>
@@ -17,13 +23,22 @@ const Maps = () => {
         translucent={true}
       />
       <MapView
+        ref={mapViewRef}
         style={styles.map}
         initialRegion={{
-          latitude: 30,
-          longitude: 30,
-          latitudeDelta: 1.2525,
-          longitudeDelta: 1.2525,
+          latitude: coords.lat,
+          longitude: coords.lon,
+          latitudeDelta: 0.7525,
+          longitudeDelta: 0.7525,
         }}
+        onRegionChangeComplete={() =>
+          mapViewRef.current?.animateToRegion({
+            latitude: coords.lat,
+            longitude: coords.lon,
+            latitudeDelta: 4.9525,
+            longitudeDelta: 4.9525,
+          })
+        }
       >
         <Marker
           coordinate={{ latitude: coords.lat, longitude: coords.lon }}
