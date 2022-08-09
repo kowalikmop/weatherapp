@@ -1,4 +1,5 @@
 import * as React from "react";
+import { useEffect } from "react";
 import MapView, { Marker } from "react-native-maps";
 import { StyleSheet, Text, View, Dimensions, StatusBar } from "react-native";
 
@@ -9,11 +10,11 @@ const Maps = () => {
   const { coords, city, temp } = useContext(AppState);
   const tempp = `Temperatura: ${Math.floor(temp.toString())} c`;
 
-  const mapViewRef = useRef(city);
+  const mapViewRef = useRef(null);
 
-  console.log(city);
-
-
+  useEffect(() => {
+    console.log(city);
+  }, [city]);
 
   return (
     <View style={styles.container}>
