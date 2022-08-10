@@ -30,6 +30,7 @@ const Tabs = () => {
         component={MyStack}
         options={{
           tabBarBadge: Math.floor(temp),
+          tabBarBadgeStyle: { backgroundColor: tabBarBadgeBackgroundColor },
           tabBarIcon: ({ color, size }) => (
             <Feather name="sun" color={color} size={size} />
           ),
@@ -39,7 +40,6 @@ const Tabs = () => {
         name="Mapa"
         component={Maps}
         options={{
-          tabBarBadgeStyle: { backgroundColor: tabBarBadgeBackgroundColor },
           tabBarIcon: ({ color, size }) => (
             <Ionicons name="locate-sharp" color={color} size={size} />
           ),
@@ -49,8 +49,6 @@ const Tabs = () => {
         name="Profil"
         component={Profile}
         options={{
-          //  tabBarBadge: temmpp,
-          tabBarBadgeStyle: { backgroundColor: tabBarBadgeBackgroundColor },
           tabBarIcon: ({ color, size }) => (
             <Feather name="user" color={color} size={size} />
           ),
