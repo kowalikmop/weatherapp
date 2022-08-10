@@ -13,8 +13,21 @@ const Maps = () => {
   const mapViewRef = useRef(null);
 
   useEffect(() => {
-    console.log(city);
+    goToRegion();
   }, [city]);
+
+  const animateRegion = {
+    latitude: coords.lat,
+    longitude: coords.lon,
+    latitudeDelta: 4.9525,
+    longitudeDelta: 4.9525,
+  };
+
+  const goToRegion = () => {
+    //complete this animation in 3 seconds
+    mapViewRef.current.animateToRegion(animateRegion, 2000);
+    console.log(city);
+  };
 
   return (
     <View style={styles.container}>
@@ -32,14 +45,6 @@ const Maps = () => {
           latitudeDelta: 0.7525,
           longitudeDelta: 0.7525,
         }}
-        onRegionChangeComplete={() =>
-          mapViewRef.current?.animateToRegion({
-            latitude: coords.lat,
-            longitude: coords.lon,
-            latitudeDelta: 4.9525,
-            longitudeDelta: 4.9525,
-          })
-        }
       >
         <Marker
           coordinate={{ latitude: coords.lat, longitude: coords.lon }}
