@@ -5,7 +5,7 @@ import {
   TouchableOpacity,
   StatusBar,
 } from "react-native";
-
+import React, { useState, useContext, useLayoutEffect } from "react";
 import City from "./City";
 import WeatherCard from "./WeatherCard";
 import WeatherDetails from "./WeatherDetails";
@@ -16,9 +16,17 @@ const Home = ({ navigation }) => {
     navigation.navigate("Town");
   };
 
+  useLayoutEffect(() => {
+    console.log("działa");
+  }, [navigation]);
+
   return (
     <SafeAreaView style={styles.conteiner}>
-      <StatusBar backgroundColor="transparent" translucent={true} />
+      <StatusBar
+        barStyle="dark-content"
+        backgroundColor="#ffffff"
+        // translucent={true}
+      />
       <ImageBackground source={Imagee} resizeMode="cover" style={styles.image}>
         <TouchableOpacity onPress={pressHandler} style={styles.citys}>
           <City></City>

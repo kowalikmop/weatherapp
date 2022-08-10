@@ -31,11 +31,7 @@ const Maps = () => {
 
   return (
     <View style={styles.container}>
-      <StatusBar
-        barStyle="dark-content"
-        backgroundColor="transparent"
-        translucent={true}
-      />
+      <StatusBar barStyle="dark-content" backgroundColor="#ffffff" />
       <MapView
         ref={mapViewRef}
         style={styles.map}
@@ -63,7 +59,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#fff",
     alignItems: "center",
     justifyContent: "center",
-    marginTop: 90,
+    marginTop: 60,
   },
   map: {
     width: Dimensions.get("window").width,
