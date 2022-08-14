@@ -10,7 +10,7 @@ import React, { useState, useContext } from "react";
 import { AppState } from "./AppState";
 
 import MyStack from "./MyStack";
-import Profile from "./Profile";
+import Login from "./Login";
 import Maps from "./Maps";
 
 const Tab = createBottomTabNavigator();
@@ -46,8 +46,8 @@ const Tabs = () => {
         }}
       />
       <Tab.Screen
-        name="Profil"
-        component={Profile}
+        name="Login"
+        component={Login}
         options={{
           tabBarIcon: ({ color, size }) => (
             <Feather name="user" color={color} size={size} />
