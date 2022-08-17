@@ -9,31 +9,67 @@ import {
   Icon,
   Pressable,
 } from "react-native";
+import { useState, useEffect } from "react";
 import { Feather } from "@expo/vector-icons";
+// import { auth } from '../firebase';
 
-const Login = () => {
+const Login = ({ navigation }) => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  /*
+  useEffect(() => {
+    const unsubscribe = auth.onAuthStateChanged(user => {
+      if (user) {
+        navigation.replace("Home")
+      }
+    })
+
+    return unsubscribe
+  }, [])
+
+  const handleSignUp = () => {
+    auth
+      .createUserWithEmailAndPassword(email, password)
+      .then(userCredentials => {
+        const user = userCredentials.user;
+        console.log('Registered with:', user.email);
+      })
+      .catch(error => alert(error.message))
+  }
+
+  const handleLogin = () => {
+    auth
+      .signInWithEmailAndPassword(email, password)
+      .then(userCredentials => {
+        const user = userCredentials.user;
+        console.log('Logged in with:', user.email);
+      })
+      .catch(error => alert(error.message))
+  } */
+
   return (
     <View style={styles.view}>
       <Feather name="user" size={70} color="black" />
       <Text style={styles.text}>Logowanie</Text>
       <View style={styles.inputs}>
         <TextInput
+          value={email}
           style={styles.input}
-          autoComplete="email"
           placeholder="email"
           autoFocus
         />
         <TextInput
+          value={password}
           style={styles.input}
-          autoComplete="password"
           placeholder="hasło"
+          secureTextEntry
         />
       </View>
       <View style={styles.buttons}>
-        <Pressable style={styles.primary_btn}>
+        <Pressable style={styles.primary_btn} /*onPress={handleSignUp} */>
           <Text style={styles.text_primary_btn}>Zaloguj</Text>
         </Pressable>
-        <Pressable style={styles.secondary_btn}>
+        <Pressable style={styles.secondary_btn} /* onPress={handleSignUp} */>
           <Text style={styles.text_secondary_btn}>Zarejestruj</Text>
         </Pressable>
       </View>
@@ -57,7 +93,7 @@ const styles = StyleSheet.create({
     marginTop: 20,
     fontSize: 14,
     width: 200,
-    height: 50,
+    height: 40,
     borderBottomColor: "gray",
     borderBottomWidth: 1,
     // borderBottomColor: 'red',
