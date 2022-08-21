@@ -11,41 +11,44 @@ import {
 } from "react-native";
 import { useState, useEffect } from "react";
 import { Feather } from "@expo/vector-icons";
-// import { auth } from '../firebase';
+import { auth } from "../firebase";
 
 const Login = ({ navigation }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  /*
+
   useEffect(() => {
-    const unsubscribe = auth.onAuthStateChanged(user => {
+    const unsubscribe = auth.onAuthStateChanged((user) => {
       if (user) {
-        navigation.replace("Home")
+        navigation.navigate("Home");
       }
-    })
+    });
 
-    return unsubscribe
-  }, [])
+    return unsubscribe;
+  }, []);
 
-  const handleSignUp = () => {
+  /* const handleSignUp = () => {
     auth
       .createUserWithEmailAndPassword(email, password)
-      .then(userCredentials => {
+      .then((userCredentials) => {
         const user = userCredentials.user;
-        console.log('Registered with:', user.email);
+        console.log("Zarejestrowany jako:", user.email);
       })
-      .catch(error => alert(error.message))
-  }
-
+      .catch((error) => alert("Problem z rejestracją:", error.message));
+  };
+*/
   const handleLogin = () => {
     auth
       .signInWithEmailAndPassword(email, password)
-      .then(userCredentials => {
+      .then((userCredentials) => {
         const user = userCredentials.user;
-        console.log('Logged in with:', user.email);
+        console.log("Zalogowany jako:", user.email);
+        console.log(auth);
+        setEmail("");
+        setPassword("");
       })
-      .catch(error => alert(error.message))
-  } */
+      .catch((error) => alert("Problem z logowaniem:", error.message));
+  };
 
   return (
     <View style={styles.view}>
@@ -54,19 +57,21 @@ const Login = ({ navigation }) => {
       <View style={styles.inputs}>
         <TextInput
           value={email}
+          onChangeText={(text) => setEmail(text)}
           style={styles.input}
           placeholder="email"
           autoFocus
         />
         <TextInput
           value={password}
+          onChangeText={(text) => setPassword(text)}
           style={styles.input}
           placeholder="hasło"
           secureTextEntry
         />
       </View>
       <View style={styles.buttons}>
-        <Pressable style={styles.primary_btn} /*onPress={handleSignUp} */>
+        <Pressable style={styles.primary_btn} onPress={handleLogin}>
           <Text style={styles.text_primary_btn}>Zaloguj</Text>
         </Pressable>
         <Pressable style={styles.secondary_btn} /* onPress={handleSignUp} */>
