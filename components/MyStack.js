@@ -16,7 +16,7 @@ const MyStack = () => {
       <Stack.Screen
         name="Town"
         component={Town}
-        options={{ headerShown: false }}
+        options={{ headerShown: true, title: false }}
       />
     </Stack.Navigator>
   );

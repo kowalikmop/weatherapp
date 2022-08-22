@@ -13,13 +13,23 @@ const Town = ({ navigation }) => {
   const { changeTown } = useContext(AppState);
 
   const [miasta, setMiasta] = useState([
-    { name: "Poznań", id: "1" },
-    { name: "Warszawa", id: "2" },
+    { name: "Białystok", id: "1" },
+    { name: "Bydgoszcz", id: "2" },
     { name: "Gdańsk", id: "3" },
     { name: "Katowice", id: "4" },
-    { name: "Gdynia", id: "5" },
-    { name: "Wrocław", id: "6" },
-    { name: "Kraków", id: "7" },
+    { name: "Kielce", id: "5" },
+    { name: "Kraków", id: "6" },
+    { name: "Lublin", id: "7" },
+    { name: "Łódź", id: "8" },
+    { name: "Olsztyn", id: "9" },
+    { name: "Opole", id: "10" },
+    { name: "Poznań", id: "11" },
+    { name: "Rzeszów", id: "12" },
+    { name: "Szczecin", id: "13" },
+    { name: "Toruń", id: "14" },
+    { name: "Warszawa", id: "15" },
+    { name: "Wrocław", id: "16" },
+    { name: "Zielona Góra", id: "17" },
   ]);
 
   const pressHandler = (item) => {
@@ -55,7 +65,7 @@ const styles = StyleSheet.create({
     justifyContent: "flex-start",
     //      alignItems:  "left",
     //  backgroundColor: 'red',
-    marginTop: 80,
+    marginTop: 60,
   },
   text: {
     color: "white",
